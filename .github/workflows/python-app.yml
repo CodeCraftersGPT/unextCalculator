@@ -22,13 +22,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Install dependencies if necessary, or leave it blank if none
+        # Install dependencies if necessary
         # pip install -r requirements.txt
 
+    - name: Build the calculator application
+      run: |
+        echo "Building the application..."
+        # No interactive run; simply build or validate structure
+        python -m py_compile calculator.py  # Compiles the Python file to validate syntax
+    
     - name: Run tests
       run: |
         python -m unittest discover
-
-    - name: Run the calculator application
-      run: |
-        python calculator.py
